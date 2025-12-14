@@ -2,6 +2,15 @@
 <html lang="nl">
 <head>
     <meta charset="UTF-8">
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-17772811772"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'AW-17772811772');
+    </script>
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nieuw — Huis te koop Manzac-sur-Vern — €198.000 | Ici Dordogne</title>
     <meta name="description" content="Moderne gelijkvloerse woning 99m² in Manzac-sur-Vern. Energielabel C, omheinde tuin 1889m², garage 38m². €198.000. 15 min van Périgueux.">
@@ -109,8 +118,8 @@
         .lightbox-prev { left: 20px; }
         .lightbox-next { right: 20px; }
         .lightbox-counter { position: absolute; bottom: 30px; left: 50%; transform: translateX(-50%); color: #fff; }
-        .chat-button { position: fixed; bottom: 24px; right: 24px; width: 64px; height: 64px; border-radius: 50%; background: var(--vert-dordogne); color: #fff; border: none; cursor: pointer; box-shadow: 0 4px 20px rgba(0,0,0,0.2); z-index: 999; font-size: 28px; }
-        .chat-panel { display: none; position: fixed; bottom: 24px; right: 24px; width: 380px; max-width: calc(100vw - 48px); height: 550px; background: #fff; border-radius: 16px; box-shadow: 0 8px 40px rgba(0,0,0,0.2); flex-direction: column; z-index: 1000; overflow: hidden; }
+        .chat-button { width: 120px; height: 120px; border-radius: 50%; background: url('images/agent-chat.png') center/cover; border: 4px solid var(--vert-dordogne); cursor: pointer; box-shadow: 0 4px 20px rgba(0,0,0,0.3); }
+        .chat-panel { display: none; position: fixed; bottom: 24px; right: 24px; width: 380px; max-width: calc(100vw - 48px); height: 550px; max-height: calc(100vh - 48px); background: #fff; border-radius: 16px; box-shadow: 0 8px 40px rgba(0,0,0,0.2); flex-direction: column; z-index: 1000; overflow: hidden; }
         .chat-panel.active { display: flex; }
         .chat-header { background: var(--vert-dordogne); color: #fff; padding: 16px 20px; display: flex; justify-content: space-between; align-items: center; }
         .chat-title { font-weight: 600; }
@@ -121,7 +130,7 @@
         .message.user { background: var(--vert-dordogne); color: #fff; align-self: flex-end; border-bottom-right-radius: 4px; }
         .message.assistant { background: #fff; color: #2d3436; align-self: flex-start; border-bottom-left-radius: 4px; box-shadow: 0 1px 3px rgba(0,0,0,0.1); }
         .chat-input-area { padding: 16px; border-top: 1px solid #e8e6e3; display: flex; gap: 12px; }
-        .chat-input { flex: 1; padding: 12px 16px; border: 1px solid #ddd; border-radius: 24px; font-size: 14px; outline: none; }
+        .chat-input { flex: 1; padding: 12px 16px; border: 1px solid #ddd; border-radius: 24px; font-size: 16px; outline: none; }
         .chat-send { width: 44px; height: 44px; border-radius: 50%; background: var(--vert-dordogne); color: #fff; border: none; cursor: pointer; font-size: 18px; }
         @media (max-width: 900px) { .main-info { grid-template-columns: 1fr; } .sidebar { position: static; } .gallery-grid { grid-template-columns: 1fr; } h1 { font-size: 28px; } }
         
@@ -161,6 +170,56 @@
         .plan-image { width: 100%; border-radius: 16px; box-shadow: 0 4px 20px rgba(0,0,0,0.1); cursor: pointer; }
         
         @media (max-width: 600px) { .urgency-banner { left: 12px; right: 12px; bottom: 90px; } .share-buttons { flex-direction: column; } .exit-popup-form { flex-direction: column; } }
+    
+        .itineraire-btn {
+            display: inline-block;
+            background: var(--vert-dordogne);
+            color: white;
+            padding: 12px 24px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+        .itineraire-btn:hover { background: #2d5a3d; transform: translateY(-2px); }
+        
+        .mentions-link { color: rgba(255,255,255,0.7); text-decoration: none; font-size: 12px; margin-top: 8px; display: block; }
+        .mentions-link:hover { color: white; }
+        
+        .chatbox { position: fixed; bottom: 100px; right: 24px; width: 380px; max-width: calc(100vw - 48px); background: white; border-radius: 16px; box-shadow: 0 8px 32px rgba(0,0,0,0.15); z-index: 1000; overflow: hidden; }
+        .chatbox-header { background: var(--vert-dordogne); color: white; padding: 16px; display: flex; justify-content: space-between; align-items: center; font-weight: 600; }
+        .chatbox-close { background: none; border: none; color: white; font-size: 24px; cursor: pointer; }
+        .chatbox-messages { height: 300px; overflow-y: auto; padding: 16px; }
+        .chatbox-input-container { display: flex; padding: 12px; border-top: 1px solid #eee; gap: 8px; }
+        .chatbox-input-container input { flex: 1; padding: 12px; border: 1px solid #ddd; border-radius: 8px; font-size: 14px; }
+        .chatbox-send { background: var(--vert-dordogne); color: white; border: none; padding: 12px 20px; border-radius: 8px; cursor: pointer; font-weight: 600; }
+        .chat-toggle { position: fixed; bottom: 24px; right: 24px; width: 60px; height: 60px; border-radius: 50%; background: var(--vert-dordogne); color: white; border: none; cursor: pointer; box-shadow: 0 4px 16px rgba(0,0,0,0.2); z-index: 999; font-size: 24px; }
+        .chat-toggle:hover { transform: scale(1.1); }
+        .message { margin-bottom: 12px; padding: 10px 14px; border-radius: 12px; max-width: 85%; }
+        .message.user { background: var(--vert-dordogne); color: white; margin-left: auto; }
+        .message.bot { background: #f0f0f0; color: #333; }
+        
+        /* Share menu */
+        .share-dropdown { position: relative; display: inline-block; }
+        .share-dropdown-btn { background: #1a5d4a; color: white; padding: 10px 16px; border: none; border-radius: 8px; cursor: pointer; font-size: 14px; }
+        .share-dropdown-btn:hover { background: #143d32; }
+        .share-dropdown-menu { display: none; position: absolute; bottom: 100%; left: 0; background: white; border-radius: 8px; box-shadow: 0 4px 20px rgba(0,0,0,0.15); min-width: 160px; z-index: 100; margin-bottom: 8px; overflow: hidden; }
+        .share-dropdown-menu.active { display: block; }
+        .share-dropdown-menu a { display: flex; align-items: center; gap: 10px; padding: 12px 16px; color: #333; text-decoration: none; font-size: 14px; }
+        .share-dropdown-menu a:hover { background: #f5f5f5; }
+    
+        /* Chat bubble */
+        .chat-container { position: fixed; bottom: 24px; right: 24px; z-index: 999; display: flex; flex-direction: column; align-items: flex-end; }
+        .chat-bubble { background: white; color: #1a5d4a; padding: 12px 16px; border-radius: 20px; box-shadow: 0 4px 15px rgba(0,0,0,0.15); margin-bottom: 12px; font-size: 14px; font-weight: 500; max-width: 200px; text-align: center; animation: pulse-bubble 2s infinite; cursor: pointer; position: relative; }
+        .chat-bubble:after { content: ''; position: absolute; bottom: -8px; right: 30px; border-width: 8px 8px 0; border-style: solid; border-color: white transparent transparent; }
+        @keyframes pulse-bubble { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.05); } }
+    
+        /* Phone button with tooltip */
+        .phone-btn { position: relative; background: none; border: none; color: var(--vert-dordogne); cursor: pointer; padding: 8px; display: flex; align-items: center; }
+        .phone-btn:hover { color: #143d32; }
+        .phone-tooltip { display: none; position: absolute; top: 100%; right: 0; background: var(--vert-dordogne); color: white; padding: 12px 16px; border-radius: 8px; font-weight: 600; font-size: 16px; white-space: nowrap; box-shadow: 0 4px 15px rgba(0,0,0,0.2); margin-top: 8px; z-index: 100; }
+        .phone-tooltip.active { display: block; }
+        .phone-tooltip a { color: white; text-decoration: none; }
     </style>
 </head>
 <body>
@@ -173,33 +232,38 @@
 
     <header>
         <div class="header-content">
-            <div class="logo">ICI DORDOGNE</div>
+            <div class="logo"><a href="https://www.icidordogne.fr/" target="_blank"><img src="images/logo-header.png" alt="Ici Dordogne" style="height: 40px;"></a></div>
             <div class="lang-switch">
                 <a class='lang-btn' href='/'>FR</a>
                 <a class='lang-btn' href='/en'>EN</a>
                 <a class='lang-btn active' href='/nl'>NL</a>
             </div>
-            <a href="tel:0553133333" class="phone">+33 5 53 13 33 33</a>
+            <button class="phone-btn" onclick="togglePhone()">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+                </svg>
+                <div class="phone-tooltip" id="phone-tooltip"><a href="tel:0553133333">📞 +33 5 53 13 33 33</a></div>
+            </button>
         </div>
     </header>
 
     <section class="hero-gallery">
         <div class="gallery-grid">
-            <div class="gallery-item gallery-main" onclick="openLightbox(0)"><img src="images/facade.png" alt="Huis buitenkant"></div>
-            <div class="gallery-item" onclick="openLightbox(1)"><img src="images/sejour.png" alt="Woonkamer"></div>
-            <div class="gallery-item gallery-more" onclick="openLightbox(2)"><img src="images/cuisine.png" alt="Keuken"></div>
+            <div class="gallery-item gallery-main" onclick="openLightbox(0)"><img src="images/facade.webp" alt="Huis buitenkant"></div>
+            <div class="gallery-item" onclick="openLightbox(1)"><img src="images/sejour.webp" alt="Woonkamer"></div>
+            <div class="gallery-item gallery-more" onclick="openLightbox(2)"><img src="images/cuisine.webp" alt="Keuken"></div>
         </div>
     </section>
 
     <section class="main-info">
         <div class="content">
             <div class="badge-container">
-                <span class="badge-coup-coeur">❤️ Aanrader</span>
-                <span class="badge">Energie C • Uitstoot A</span>
-                <span class="badge-views">👁️ <span id="view-count">143</span> weergaven deze week</span>
+                <span class="badge-coup-coeur">â¤️ Aanrader</span>
+                <span class="badge">Energie C "¢ Uitstoot A</span>
+                <span class="badge-views"> <span id="view-count">143</span> weergaven deze week</span>
             </div>
             <h1>Moderne Gelijkvloerse Woning</h1>
-            <p class="location">📍 Manzac-sur-Vern — 15 min van Périgueux</p>
+            <p class="location"> Manzac-sur-Vern — 15 min van Périgueux</p>
             <div class="price">€198.000</div>
             
             <div class="features-row">
@@ -224,15 +288,23 @@
             <div class="contact-card">
                 <h3>Interesse in dit huis?</h3>
                 <button class="btn-primary" onclick="openChat(); startRdvFlow();">Bezichtiging Aanvragen</button>
-                <button class="btn-secondary" onclick="openChat()">💬 Stel een Vraag</button>
+                <button class="btn-secondary" onclick="openChat()"> Stel een Vraag</button>
                 <div class="agent-info">
-                    <img src="images/logo.png" alt="Ici Dordogne" class="agent-logo">
+                    <img src="images/logo.webp" alt="Ici Dordogne" class="agent-logo">
                     <div><div style="font-weight:600">Ici Dordogne</div><div style="color:var(--gris);font-size:14px">+33 5 53 13 33 33</div></div>
                 </div>
                 <div class="share-buttons">
-                    <a href="https://www.facebook.com/sharer/sharer.php?u=https://nouveaute-maisonavendre-manzacsurvern.netlify.app/nl.html" target="_blank" class="share-btn facebook">📘 Delen</a>
-                    <a href="mailto:?subject=Huis te koop Manzac-sur-Vern&body=Bekijk dit huis: https://nouveaute-maisonavendre-manzacsurvern.netlify.app/nl.html" class="share-btn email">✉️ Email</a>
-                    <button onclick="copyLink()" class="share-btn copy" id="copy-btn">🔗 Kopiëren</button>
+                    <div class="share-dropdown">
+                        <button class="share-dropdown-btn" onclick="toggleShareMenu()">📤 Delen</button>
+                        <div class="share-dropdown-menu" id="share-menu">
+                            <a href="https://www.facebook.com/sharer/sharer.php?u=https://nouveaute-maisonavendre-manzacsurvern.netlify.app/nl.html" target="_blank">📘 Facebook</a>
+                            <a href="https://wa.me/?text=Bekijk dit huis: https://nouveaute-maisonavendre-manzacsurvern.netlify.app/nl.html" target="_blank">💬 WhatsApp</a>
+                            <a href="https://twitter.com/intent/tweet?url=https://nouveaute-maisonavendre-manzacsurvern.netlify.app/nl.html&text=Huis te koop Manzac-sur-Vern €198.000" target="_blank">𝕏 X (Twitter)</a>
+                            <a href="https://www.linkedin.com/sharing/share-offsite/?url=https://nouveaute-maisonavendre-manzacsurvern.netlify.app/nl.html" target="_blank">💼 LinkedIn</a>
+                        </div>
+                    </div>
+                    <a href="mailto:agence@icidordogne.fr?subject=Huis%20te%20koop%20Manzac-sur-Vern%20198000%20EUR&body=Bekijk%20dit%20huis:%20https://nouveaute-maisonavendre-manzacsurvern.netlify.app/nl.html" class="share-btn email">✉️ Email</a>
+                    <button onclick="copyLink()" class="share-btn copy" id="copy-btn"> KopiÃ«ren</button>
                 </div>
             </div>
         </aside>
@@ -255,25 +327,7 @@
     <section class="plan-section">
         <div class="plan-inner">
             <h2 class="section-title">📐 Plattegrond</h2>
-            <img src="images/plan.png" alt="Plattegrond van het huis" class="plan-image" onclick="openLightbox(7)">
-        </div>
-    </section>
-
-    <section class="simulator-section">
-        <div class="simulator-inner">
-            <div class="simulator-card">
-                <h2 class="simulator-title">💰 Hypotheek Calculator</h2>
-                <p class="simulator-subtitle">Voor deze woning van €198.000</p>
-                <div class="simulator-row"><span class="simulator-label">Eigen inbreng</span><strong id="apport-value">€20.000</strong></div>
-                <input type="range" class="simulator-slider" id="apport-slider" min="0" max="100000" step="5000" value="20000" oninput="updateSimulator()">
-                <div class="simulator-row"><span class="simulator-label">Looptijd</span><strong id="duree-value">20 jaar</strong></div>
-                <input type="range" class="simulator-slider" id="duree-slider" min="10" max="25" step="1" value="20" oninput="updateSimulator()">
-                <div class="simulator-result">
-                    <div class="simulator-result-label">Geschatte Maandlasten</div>
-                    <div class="simulator-result-value" id="mensualite-value">€920</div>
-                    <div class="simulator-result-detail">Indicatief tarief: 3,5% • Exclusief verzekering</div>
-                </div>
-            </div>
+            <img src="images/plan.webp" alt="Plattegrond van het huis" class="plan-image" onclick="openLightbox(7)">
         </div>
     </section>
 
@@ -281,13 +335,25 @@
         <div class="map-inner">
             <h2 class="section-title">📍 Ideale Locatie</h2>
             <div class="map-container">
-                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d45178.45!2d0.62!3d45.18!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47ff5e3c3c3c3c3c%3A0x47ff5e3c3c3c3c3c!2s24110%20Manzac-sur-Vern!5e0!3m2!1sfr!2sfr" allowfullscreen="" loading="lazy"></iframe>
+                <iframe 
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1418.2!2d0.5865!3d45.1083!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47ff5dcb5c8d3c51%3A0x8f85c3e8e8e8e8e8!2s2001%20Route%20des%20Quatre%20Bornes%2C%2024110%20Manzac-sur-Vern!5e0!3m2!1sfr!2sfr" 
+                    width="100%" 
+                    height="300" 
+                    style="border:0; border-radius: 12px;" 
+                    allowfullscreen="" 
+                    loading="lazy" 
+                    referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    <div class="itineraire-container" style="text-align: center; margin-top: 16px;">
+                        <a href="https://maps.app.goo.gl/7fTk3NZCQUBf9Eus8" target="_blank" class="itineraire-btn">
+                            🧭 Routebeschrijving
+                        </a>
+                    </div>
             </div>
             <div class="distances-grid">
-                <div class="distance-item"><span class="distance-icon">🛣️</span><div class="distance-text"><strong>Snelweg A89</strong><span>6 minuten</span></div></div>
-                <div class="distance-item"><span class="distance-icon">🛒</span><div class="distance-text"><strong>Saint-Astier (winkels)</strong><span>5 minuten</span></div></div>
-                <div class="distance-item"><span class="distance-icon">🏛️</span><div class="distance-text"><strong>Centrum Périgueux</strong><span>15 minuten</span></div></div>
-                <div class="distance-item"><span class="distance-icon">✈️</span><div class="distance-text"><strong>Vliegveld Bergerac</strong><span>20 minuten</span></div></div>
+                <div class="distance-item"><span class="distance-icon"></span><div class="distance-text"><strong>Snelweg A89</strong><span>6 minuten</span></div></div>
+                <div class="distance-item"><span class="distance-icon"></span><div class="distance-text"><strong>Saint-Astier (winkels)</strong><span>5 minuten</span></div></div>
+                <div class="distance-item"><span class="distance-icon"></span><div class="distance-text"><strong>Centrum Périgueux</strong><span>15 minuten</span></div></div>
+                <div class="distance-item"><span class="distance-icon">✈️</span><div class="distance-text"><strong>Vliegveld Bergerac</strong><span>20 minuten</span></div></div>
             </div>
         </div>
     </section>
@@ -295,9 +361,9 @@
     <section class="testimonials-section">
         <div class="testimonials-inner">
             <div class="testimonials-header">
-                <h2 class="section-title">Wat Onze Klanten Zeggen</h2>
+                <h2 class="section-title">⭐ Wat Onze Klanten Zeggen</h2>
                 <div class="testimonials-stars">★★★★★</div>
-                <p class="testimonials-rating"><strong>4.8/5</strong> op Google • 120+ beoordelingen</p>
+                <p class="testimonials-rating"><strong>4.8/5</strong> op Google "¢ 120+ beoordelingen</p>
             </div>
             <div class="testimonials-grid">
                 <div class="testimonial-card">
@@ -324,20 +390,25 @@
     </section>
 
     <footer>
-        <div class="footer-logo">ICI DORDOGNE</div>
-        <a href="tel:0553133333" class="footer-link">📞 +33 5 53 13 33 33</a>
+        <div class="footer-logo"><a href="https://www.icidordogne.fr/" target="_blank"><img src="images/logo.webp" alt="ICI Dordogne" style="height: 60px; width: auto;"></a></div>
+        <a href="tel:0553133333" class="footer-link"> +33 5 53 13 33 33</a>
         <p class="footer-legal">Makelaarskosten voor rekening verkoper</p>
-    </footer>
+    
+                <a href="https://www.icidordogne.fr/mentions-legales/" target="_blank" style="color: rgba(255,255,255,0.7); text-decoration: none; font-size: 12px; display: block; margin-top: 8px;">Juridische informatie</a>
+            </footer>
 
     <div class="lightbox" id="lightbox">
-        <span class="lightbox-close" onclick="closeLightbox()">×</span>
-        <span class="lightbox-nav lightbox-prev" onclick="prevImage()">❮</span>
+        <span class="lightbox-close" onclick="closeLightbox()">&times;</span>
+        <span class="lightbox-nav lightbox-prev" onclick="prevImage()">&#10094;</span>
         <img id="lightbox-img" src="" alt="">
-        <span class="lightbox-nav lightbox-next" onclick="nextImage()">❯</span>
+        <span class="lightbox-nav lightbox-next" onclick="nextImage()">&#10095;</span>
         <div class="lightbox-counter"><span id="current-img">1</span> / <span id="total-imgs">7</span></div>
     </div>
 
-    <button class="chat-button" id="chat-btn" onclick="openChat()">💬</button>
+    <div class="chat-container" id="chat-btn">
+        <div class="chat-bubble" onclick="openChat()">Vragen?<br>Ik antwoord direct!</div>
+        <button class="chat-button" onclick="openChat()"></button>
+    </div>
     
     <div class="chat-panel" id="chat-panel">
         <div class="chat-header">
@@ -349,12 +420,12 @@
         </div>
         <div class="chat-input-area">
             <input type="text" class="chat-input" id="chat-input" placeholder="Uw bericht..." onkeypress="if(event.key==='Enter')sendMessage()">
-            <button class="chat-send" id="chat-send" onclick="sendMessage()">➤</button>
+            <button class="chat-send" id="chat-send" onclick="sendMessage()">âž¤</button>
         </div>
     </div>
 
-    <script>
-        const images = ['images/facade.png','images/sejour.png','images/cuisine.png','images/chambre.png','images/sdb.png','images/garage.png','images/jardin.png'];
+    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+        const images = ['images/facade.webp','images/sejour.webp','images/cuisine.webp','images/chambre.webp','images/sdb.webp','images/garage.webp','images/jardin.webp'];
         let currentIndex = 0;
         function openLightbox(i) { currentIndex = i; document.getElementById('lightbox-img').src = images[i]; document.getElementById('current-img').textContent = i + 1; document.getElementById('lightbox').classList.add('active'); }
         function closeLightbox() { document.getElementById('lightbox').classList.remove('active'); }
@@ -367,9 +438,27 @@
 WONING: €198.000, 99m², 3 slaapkamers, omheinde tuin 1889m², garage 38m², Energielabel C, Uitstoot A, pelletkachel (~€100/maand verwarming), 15 min Périgueux, instapklaar.
 ROL: Beantwoord vragen. Voor bezichtigingen, verzamel: naam, telefoon, beschikbaarheid. Zeg dat het kantoor terugbelt. Antwoord in het Nederlands, 2-3 zinnen.`;
 
+        function toggleChat() {
+            const chatbox = document.getElementById('chatbox');
+            if (chatbox.style.display === 'none' || chatbox.style.display === '') {
+                openChat();
+            } else {
+                closeChat();
+            }
+        }
+        
         function openChat() { document.getElementById('chat-panel').classList.add('active'); document.getElementById('chat-btn').style.display = 'none'; }
         function closeChat() { document.getElementById('chat-panel').classList.remove('active'); document.getElementById('chat-btn').style.display = ''; }
-        function startRdvFlow() { setTimeout(() => { addMessage("Ik wil dit huis graag bezichtigen", 'user'); conversationHistory.push({ role: 'user', content: "Ik wil dit huis graag bezichtigen" }); callChatAPI(); }, 500); }
+        function startRdvFlow() {
+            if (rdvStarted) return;
+            rdvStarted = true;
+            // Google Ads conversion tracking
+            gtag('event', 'conversion', {
+                'send_to': 'AW-17772811772/U5YXCLeo7ssbEPyr3ppC',
+                'value': 1.0,
+                'currency': 'EUR'
+            });
+ setTimeout(() => { addMessage("Ik wil dit huis graag bezichtigen", 'user'); conversationHistory.push({ role: 'user', content: "Ik wil dit huis graag bezichtigen" }); callChatAPI(); }, 500); }
         
         async function sendMessage() {
             const input = document.getElementById('chat-input'), message = input.value.trim();
@@ -404,17 +493,39 @@ ROL: Beantwoord vragen. Voor bezichtigingen, verzamel: naam, telefoon, beschikba
             document.getElementById('mensualite-value').textContent = '€' + Math.round(mensualite).toLocaleString('nl-NL');
         }
         
+        function toggleShareMenu() {
+            const menu = document.getElementById('share-menu');
+            menu.classList.toggle('active');
+        }
+        
+        document.addEventListener('click', function(e) {
+            const dropdown = document.querySelector('.share-dropdown');
+            const menu = document.getElementById('share-menu');
+            if (dropdown && menu && !dropdown.contains(e.target)) {
+                menu.classList.remove('active');
+            }
+        });
+        
         function copyLink() {
             navigator.clipboard.writeText(window.location.href).then(() => {
                 const btn = document.getElementById('copy-btn');
                 btn.textContent = '✓ Gekopieerd!';
                 btn.classList.add('copy-success');
-                setTimeout(() => { btn.textContent = '🔗 Kopiëren'; btn.classList.remove('copy-success'); }, 2000);
+                setTimeout(() => { btn.textContent = ' KopiÃ«ren'; btn.classList.remove('copy-success'); }, 2000);
             });
         }
         
         let exitPopupShown = false;
-        function initExitPopup() {
+        
+        function initViewCounter() {
+            // Compteur de vues (simulé pour effet marketing)
+            const viewCount = document.getElementById('view-count');
+            if (viewCount) {
+                viewCount.textContent = 127 + Math.floor(Math.random() * 30);
+            }
+        }
+        
+function initExitPopup() {
             document.addEventListener('mouseout', function(e) {
                 if (e.clientY < 10 && !exitPopupShown && !sessionStorage.getItem('exitPopupClosed')) {
                     document.getElementById('exit-popup').classList.add('active');
@@ -427,6 +538,13 @@ ROL: Beantwoord vragen. Voor bezichtigingen, verzamel: naam, telefoon, beschikba
             sessionStorage.setItem('exitPopupClosed', 'true');
         }
         function submitExitEmail(e) {
+            // Google Ads conversion tracking
+            gtag('event', 'conversion', {
+                'send_to': 'AW-17772811772/U5YXCLeo7ssbEPyr3ppC',
+                'value': 0.5,
+                'currency': 'EUR'
+            });
+
             e.preventDefault();
             const email = document.getElementById('exit-email').value;
             fetch('/', { method: 'POST', headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
@@ -441,22 +559,17 @@ ROL: Beantwoord vragen. Voor bezichtigingen, verzamel: naam, telefoon, beschikba
         }
         
         document.addEventListener('DOMContentLoaded', function() {
-            updateSimulator();
-            document.getElementById('view-count').textContent = 127 + Math.floor(Math.random() * 30);
+
             initExitPopup();
             initUrgencyBanner();
         });
     </script>
     
-    <div class="urgency-banner" id="urgency-banner" style="display:none">
-        <span class="urgency-dot"></span>
-        <span><strong>3 personen</strong> bekijken dit huis nu</span>
-    </div>
     
     <div class="exit-popup-overlay" id="exit-popup">
         <div class="exit-popup">
-            <span class="exit-popup-close" onclick="closeExitPopup()">×</span>
-            <div class="exit-popup-icon">🏠</div>
+            <span class="exit-popup-close" onclick="closeExitPopup()">&times;</span>
+            <div class="exit-popup-icon"> </div>
             <h3>Gaat u al weg?</h3>
             <p>Ontvang een melding als de prijs daalt of een vergelijkbare woning beschikbaar komt!</p>
             <form class="exit-popup-form" onsubmit="submitExitEmail(event)">
@@ -466,5 +579,33 @@ ROL: Beantwoord vragen. Voor bezichtigingen, verzamel: naam, telefoon, beschikba
             <p id="exit-success" class="exit-popup-success" style="display:none; margin-top: 16px;">✓ U wordt gewaarschuwd!</p>
         </div>
     </div>
+
+    <div id="chatbox" class="chatbox" style="display: none;">
+        <div class="chatbox-header">
+            <span>💬 Vraag ICI Dordogne</span>
+            <button onclick="closeChat()" class="chatbox-close">×</button>
+        </div>
+        <div id="chatbox-messages" class="chatbox-messages"></div>
+        <div class="chatbox-input-container">
+            <input type="text" id="chatbox-input" placeholder="Stel uw vraag..." onkeypress="if(event.key==='Enter')sendMessage()">
+            <button onclick="sendMessage()" class="chatbox-send">Verzenden</button>
+        </div>
+    </div>
+    <button id="chat-toggle" class="chat-toggle" onclick="toggleChat()">
+        <span class="chat-icon">💬</span>
+    </button>
+<script>
+        function togglePhone() {
+            const tooltip = document.getElementById('phone-tooltip');
+            tooltip.classList.toggle('active');
+        }
+        document.addEventListener('click', function(e) {
+            const phoneBtn = document.querySelector('.phone-btn');
+            const tooltip = document.getElementById('phone-tooltip');
+            if (phoneBtn && tooltip && !phoneBtn.contains(e.target)) {
+                tooltip.classList.remove('active');
+            }
+        });
+    </script>
 </body>
 </html>
